@@ -28,9 +28,12 @@ $ git clone git://github.com/SyllogismRXS/syllo-moos.git
 Building the Code
 -----------------
 
-$ mkdir build 
+$ mkdir build
+
 $ cd build 
+
 $ cmake .. 
+
 $ make 
 $ sudo make install 
 
