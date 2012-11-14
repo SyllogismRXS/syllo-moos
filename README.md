@@ -1,4 +1,4 @@
 syllo-moos
-==========
+=========
 
-SyllogismRXS' MOOS Repository
+SyllogismRXS' MOOS repository
