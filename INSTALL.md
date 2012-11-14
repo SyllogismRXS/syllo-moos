@@ -28,11 +28,11 @@ $ git clone git://github.com/SyllogismRXS/syllo-moos.git
 Building the Code
 -----------------
 
-$ mkdir build
-$ cd build
-$ cmake ..
-$ make
-$ sudo make install
+$ mkdir build 
+$ cd build 
+$ cmake .. 
+$ make 
+$ sudo make install 
 
 ----------------------------------------
 Kevin DeMarco <kevin.demarco@gmail.com>
