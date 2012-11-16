@@ -19,7 +19,7 @@
  */
  
 #include "syllo/VideoRay/VideoRayComm/protocol_pro4.h"
-
+#include "syllo/sylloserial/serialib.h"
 
 /** @file   protocol_pro4.c
  *  @brief  PRO4 Protocol Communication
@@ -331,3 +331,113 @@ protocol_pro4_handler(Protocol_PRO4_Packet_Header *header, char* data) {
      }
 }
 
+/*
+ * Author: Kevin DeMarco
+ */
+
+#define IDLE_STATE             0
+#define SYNC_STATE             1
+#define NETWORK_ID_STATE       3
+#define HDR_FLAGS_STATE        4
+#define CSR_ADDR_STATE         5
+#define DATA_LENGTH_STATE      6
+#define HDR_CHECKSUM_STATE     7
+#define EXT_LENGTH_0_STATE     8
+#define EXT_LENGTH_1_STATE     9
+#define EXT_LEN_CHECKSUM_STATE 10
+#define DATA_STATE             11
+#define CHECKSUM_STATE         12
+
+int ParseSerialStream(serialib &serialPort, char *buf, int maxNumBytes, unsigned int TimeOut_ms)
+{
+     unsigned int bytes = 0;
+     char ret;   
+     int state = IDLE_STATE;
+     int dataLength = 0;
+     int isExtLength = 0;
+     char rxChar;
+
+     while (bytes < maxNumBytes) {
+	  ret = serialPort.ReadChar(&rxChar, TimeOut_ms);
+	  if (ret == 1) {
+	       switch (state) {
+	       case IDLE_STATE:
+		    if (rxChar == SYNC_RESPONSE_1) {
+			 state = SYNC_STATE;
+		    }
+		    break;
+
+	       case SYNC_STATE:
+		    if (rxChar == SYNC_RESPONSE_2) {
+			 state = NETWORK_ID_STATE;
+		    } else {
+			 return -4;
+		    }
+		    break;
+		    
+	       case NETWORK_ID_STATE:
+		    state = HDR_FLAGS_STATE;
+		    break;
+
+	       case HDR_FLAGS_STATE:
+		    state = CSR_ADDR_STATE;
+		    break;
+
+	       case CSR_ADDR_STATE:
+		    state = DATA_LENGTH_STATE;
+		    break;
+
+	       case DATA_LENGTH_STATE:
+		    dataLength = rxChar;
+		    state = HDR_CHECKSUM_STATE;
+		    break;
+	
+	       case HDR_CHECKSUM_STATE:
+		    if (dataLength == LENGTH_EXTENDED) {
+			 state = EXT_LENGTH_0_STATE;
+		    } else {
+			 state = DATA_STATE;
+		    }
+		    
+		    state = EXT_LENGTH_0_STATE;
+		    break;
+	
+	       case EXT_LENGTH_0_STATE:
+		    dataLength = rxChar;
+		    state = EXT_LENGTH_1_STATE;
+		    break;
+	
+	       case EXT_LENGTH_1_STATE:
+		    dataLength += (((int)rxChar) << 8) & 0xFF00;
+		    state = EXT_LEN_CHECKSUM_STATE;
+		    break;
+		    
+	       case EXT_LEN_CHECKSUM_STATE:
+		    state = DATA_STATE;
+		    break;
+	
+	       case DATA_STATE:
+		    buf[bytes++] = rxChar;
+		    
+		    if (bytes >= dataLength) {
+			 state = CHECKSUM_STATE;
+		    }
+		    
+		    state = CHECKSUM_STATE;
+		    break;
+	
+	       case CHECKSUM_STATE:
+		    state = IDLE_STATE;
+		    break;
+	
+	       default:
+		    break;
+	       }
+		    
+	  }
+	  
+	  if (ret < 0) return ret;                                      // Error while reading : return the error number
+     
+     }
+     return -3;                                                          // Buffer is full : return -3
+}

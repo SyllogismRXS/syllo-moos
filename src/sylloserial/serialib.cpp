@@ -509,7 +509,6 @@ int serialib::ReadString_Digi_API(char *String,char StartChar,unsigned int MaxNb
      return -3;                                                          // Buffer is full : return -3
 }
 
-
 /*!
   \brief Read an array of bytes from the serial device (with timeout)
   \param Buffer : array of bytes read from the serial device

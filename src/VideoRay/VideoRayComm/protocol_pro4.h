@@ -23,6 +23,7 @@
  
 #include "syllo/VideoRay/VideoRayComm/types.h"
 #include "syllo/VideoRay/VideoRayComm/protocol_pro4_device_types.h"
+#include "syllo/sylloserial/serialib.h"
 
 /** @file   protocol_pro4.h
  *  @brief  Code for the standard pro4 communication protocol
@@ -341,6 +342,9 @@ unsigned int protocol_pro4_build_response_inplace(uint8_t id,
 unsigned int protocol_pro4_parse(char data,
                                  char* packet_buf, 
                                  unsigned int max_size);
+
+
+int ParseSerialStream(serialib &serialPort, char *buf, int maxNumBytes, unsigned int TimeOut_ms);
 
                                  
 /**  @name User supplied packet handler API

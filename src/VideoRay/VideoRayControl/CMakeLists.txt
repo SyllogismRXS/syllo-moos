@@ -11,4 +11,4 @@ SET(SRCS main.cpp VideoRayControlApp.h VideoRayControlApp.cpp  ${RESOURCES})
 ADD_EXECUTABLE( pVideoRayControl ${SRCS})
 
 # indicate how to link
-TARGET_LINK_LIBRARIES(pVideoRayControl m pthread MOOS MOOSGen)
+TARGET_LINK_LIBRARIES(pVideoRayControl m pthread MOOS MOOSGen sylloserial videoraycomm)
