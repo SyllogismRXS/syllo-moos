@@ -1,0 +1,2 @@
+add_subdirectory(VideoRayControl)
+add_subdirectory(VideoRayComm)
