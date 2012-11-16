@@ -357,18 +357,20 @@ int ParseSerialStream(serialib &serialPort, char *buf, int maxNumBytes, unsigned
      int isExtLength = 0;
      char rxChar;
 
+     printf("Receiving...\n");
      while (bytes < maxNumBytes) {
 	  ret = serialPort.ReadChar(&rxChar, TimeOut_ms);
 	  if (ret == 1) {
+	       printf("0x%02X \t State: %d\n", (unsigned char)rxChar, state);
 	       switch (state) {
 	       case IDLE_STATE:
-		    if (rxChar == SYNC_RESPONSE_1) {
+		    if ((unsigned char)rxChar == (unsigned char)SYNC_RESPONSE_1) {
 			 state = SYNC_STATE;
 		    }
 		    break;
 
 	       case SYNC_STATE:
-		    if (rxChar == SYNC_RESPONSE_2) {
+		    if ((unsigned char)rxChar == (unsigned char)SYNC_RESPONSE_2) {
 			 state = NETWORK_ID_STATE;
 		    } else {
 			 return -4;
@@ -393,13 +395,11 @@ int ParseSerialStream(serialib &serialPort, char *buf, int maxNumBytes, unsigned
 		    break;
 	
 	       case HDR_CHECKSUM_STATE:
-		    if (dataLength == LENGTH_EXTENDED) {
+		    if ((unsigned char)dataLength == (unsigned char)LENGTH_EXTENDED) {
 			 state = EXT_LENGTH_0_STATE;
 		    } else {
 			 state = DATA_STATE;
 		    }
-		    
-		    state = EXT_LENGTH_0_STATE;
 		    break;
 	
 	       case EXT_LENGTH_0_STATE:
@@ -423,11 +423,11 @@ int ParseSerialStream(serialib &serialPort, char *buf, int maxNumBytes, unsigned
 			 state = CHECKSUM_STATE;
 		    }
 		    
-		    state = CHECKSUM_STATE;
 		    break;
 	
 	       case CHECKSUM_STATE:
 		    state = IDLE_STATE;
+		    return bytes;
 		    break;
 	
 	       default:
@@ -440,4 +440,127 @@ int ParseSerialStream(serialib &serialPort, char *buf, int maxNumBytes, unsigned
      
      }
      return -3;                                                          // Buffer is full : return -3
+}
+
+
+////////////////
+/** Handles request packets sent to the custom command register
+ *
+ *  This handler API function is called upon reception of a request packet
+ *  addressed to the custom command register.
+ *
+ *  @param id Id of destintion for a request packet
+ *  @param len Length of data buf
+ *  @param buf data payload buffer
+ */
+void protocol_pro4_handle_custom_command_request(uint8_t id,
+                                                        int len, 
+                                                        char *buf)
+{
+}
+
+/** Handles response packets sent to the custom command register
+ *
+ *  This handler API function is called upon reception of a response packet
+ *  addressed to the custom command register.
+ *
+ *  @param id Id of destintion for a request packet
+ *  @param device_type Designated device type for responding device
+ *  @param len Length of data buf
+ *  @param buf Data payload buffer
+*/
+void protocol_pro4_handle_custom_command_response(uint8_t id,
+                                                         int len,
+                                                         uint8_t device_type,
+                                                         char *buf)
+{
+}
+
+/** Handles the response to a device specific request packet
+ *  
+ *  This handler API function is called when the device has been requested to 
+ *  respond with a device specific response packet.  The device is expected to 
+ *  generate and transmit an appropriate response.
+ *
+ *  @param flags FLAGS byte
+ */
+void protocol_pro4_respond_device_specific(uint8_t flags)
+{
+}
+
+/** Handles the response to a csr read request packet
+ *
+ *  This handler API function is called when the device has been requested to 
+ *  respond with csr read response packet.  The device is expected to 
+ *  generate and transmit an appropriate response.
+ *
+ *  @param addr CSR memory map address
+ *  @param len Length of data payload for packet associated with this header
+ */
+void protocol_pro4_respond_csr_read(int addr, int len)
+{
+}
+
+/** Handles request packets which write data into csr registers
+ *
+ *  This handler API function is called when the device has been requested to 
+ *  write data into it's csr file.  In general the devicce should not generate
+ *  a response in this handler, as one of the respond_* API functions will be 
+ *  called after this call.
+ *
+ *  @param addr CSR memory map address
+ *  @param len Length of data payload for packet associated with this header
+ *  @param buf Data payload buffer to write into CSR file
+ */
+void protocol_pro4_csr_write(int addr,  int len, char *buf)
+{
+}
+
+/** Handles response packets sent from device id
+ *
+ *  This handler API function is called when the device receives and accepts 
+ *  a response packet.
+ *
+ *  @param id Node id of device which sent the response packet
+ *  @param flags FLAGS byte
+ *  @param addr CSR memory map address
+ *  @param len Length of data payload for packet associated with this header
+ *  @param device_type Designated device type for responding device
+ *  @param buf Buffer for entire packet
+ *  @return Total size of packet.  
+ 
+ */
+void protocol_pro4_handle_response(uint8_t id, 
+                                          uint8_t flags,
+                                          int addr, 
+                                          int len,
+                                          uint8_t device_type,       
+                                          char *buf)
+{
+}
+
+/** Allows for selective storage and processing of packets.
+ *  
+ * @returns True if packet should be stored and parsed.  Typically a non-host
+ *          device will only accept packets with it's node or group id or the
+ *          broadcast ID.
+ */
+ 
+char protocol_pro4_accept_id(uint8_t id, char isResponse)
+{
+     return 0;
+}
+
+/** Allows for selective relaying of packets.
+ *  
+ * @returns True if packet was forwarded.  Typically a non-host
+ *          device will forward all packets to all other interfaces if
+ *          the node id forward bit is set.
+ *
+ * @param data buffer containing entire packet
+ *
+ */
+char protocol_pro4_relay_packet(char* data)
+{
+     return 0;
 }

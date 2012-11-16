@@ -1,2 +1,2 @@
-add_subdirectory(VideoRayControl)
+add_subdirectory(VideoRayApp)
 add_subdirectory(VideoRayComm)
