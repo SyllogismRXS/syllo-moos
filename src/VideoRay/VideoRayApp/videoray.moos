@@ -1,0 +1,39 @@
+//------------------------------------------------
+// File: videoray.moos
+// Name: K. DeMarco
+// Date: Sept. 20, 2012
+//------------------------------------------------
+
+ServerHost = localhost
+ServerPort = 9000
+Simulator  = false
+
+Community    = videoray
+MOOSTimeWarp = 1
+LatOrigin    = 43.825300 
+LongOrigin   = -70.330400 
+
+//------------------------------------------
+// Antler configuration  block
+ProcessConfig = ANTLER
+{
+  MSBetweenLaunches = 200
+
+  Run = MOOSDB           @ NewConsole = true
+  Run = pVideoRayControl @ NewConsole = true
+  //Run = uMS             
+}
+
+ProcessConfig = uMS
+{
+	AppTick = 50
+	CommsTick = 50
+}
+
+ProcessConfig = pVideoRayControl
+{
+	AppTick = 10
+	CommsTick = 10
+
+	Device = /dev/ttyUSB0
+}
