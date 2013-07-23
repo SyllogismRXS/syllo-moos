@@ -1,27 +1,21 @@
-#ifndef VideoRayControl_APP_H 
-#define VideoRayControl_APP_H 
+#ifndef VideoRaySim_APP_H 
+#define VideoRaySim_APP_H 
 
 #include <iostream>
 #include <string>
 #include <vector>
 
 #include <MOOS/libMOOS/App/MOOSApp.h>
-#include "syllo/VideoRay/VideoRayComm/VideoRay.h"
 
-
-class VideoRayApp : public CMOOSApp { 
+class VideoRaySimApp : public CMOOSApp { 
  public:
-  VideoRayApp(); 
-  virtual ~VideoRayApp();
+  VideoRaySimApp(); 
+  virtual ~VideoRaySimApp();
 
  protected: 
 
   double appTick;
   double commsTick;
-  
-  std::string device;
-
-  VideoRay videoRay;
 
   //where we handle new mail
   bool OnNewMail(MOOSMSG_LIST &NewMail); 

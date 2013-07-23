@@ -1,0 +1,35 @@
+<moosrosconfig>
+
+  <message>
+    <moosname>NAV_X</moosname>
+    <rosname>NAV_X</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toROS</direction>
+  </message>
+
+  <message>
+    <moosname>NAV_Y</moosname>
+    <rosname>NAV_Y</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toROS</direction>
+  </message>
+
+  <message>
+    <moosname>NAV_Z</moosname>
+    <rosname>NAV_Z</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toROS</direction>
+  </message>
+
+  <message>
+    <moosname>NAV_HEADING</moosname>
+    <rosname>NAV_HEADING</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toROS</direction>
+  </message>
+
+</moosrosconfig>

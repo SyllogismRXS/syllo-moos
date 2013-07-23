@@ -73,6 +73,8 @@ include_directories(${MOOS_INCLUDE_DIRS})
 link_directories(${MOOS_LIBRARY_DIRS})
 set(LIBS ${LIBS} ${MOOS_LIBRARIES})
 
+#message("${MOOS_INCLUDE_DIRS}")
+
 INCLUDE(FindPackageMessage)
 
 message("*****************")

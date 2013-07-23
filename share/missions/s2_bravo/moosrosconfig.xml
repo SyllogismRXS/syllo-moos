@@ -1,0 +1,68 @@
+<moosrosconfig>
+
+  <message>
+    <moosname>DESIRED_HEADING</moosname>
+    <rosname>desired_heading</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toROS</direction>
+  </message>
+
+  <message>
+    <moosname>DESIRED_SPEED</moosname>
+    <rosname>desired_velocity</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toROS</direction>
+  </message>
+
+  <message>
+    <moosname>DESIRED_DEPTH</moosname>
+    <rosname>desired_depth</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toROS</direction>
+  </message>
+
+  <message>
+    <moosname>NAV_X</moosname>
+    <rosname>NAV_X</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toMOOS</direction>
+  </message>
+
+  <message>
+    <moosname>NAV_Y</moosname>
+    <rosname>NAV_Y</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toMOOS</direction>
+  </message>
+
+  <message>
+    <moosname>NAV_DEPTH</moosname>
+    <rosname>NAV_DEPTH</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toMOOS</direction>
+  </message>
+
+  <message>
+    <moosname>NAV_HEADING</moosname>
+    <rosname>NAV_HEADING</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toMOOS</direction>
+  </message>
+
+  <message>
+    <moosname>NAV_SPEED</moosname>
+    <rosname>NAV_SPEED</rosname>
+    <moostype>Double</moostype>
+    <rostype>std_msgs/Float32</rostype>
+    <direction>toMOOS</direction>
+  </message>
+
+
+</moosrosconfig>

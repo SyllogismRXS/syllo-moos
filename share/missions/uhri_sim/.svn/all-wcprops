@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta
+END
+plug_origin_warp.moos
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_origin_warp.moos
+END
+launch.sh
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/launch.sh
+END
+plug_pShare.moos
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_pShare.moos
+END
+plug_pBasicContactMgr.moos
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_pBasicContactMgr.moos
+END
+plug_pHelmIvP.moos
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_pHelmIvP.moos
+END
+plug_v1_uXMS_Compass.moos
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_v1_uXMS_Compass.moos
+END
+plug_pNodeReporter.moos
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_pNodeReporter.moos
+END
+plug_pMarinePID.moos
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_pMarinePID.moos
+END
+clean.sh
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/clean.sh
+END
+plug_uProcessWatch.moos
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_uProcessWatch.moos
+END
+plug_uTimerScript.moos
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_uTimerScript.moos
+END
+plug_uXMS.moos
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_uXMS.moos
+END
+plug_v1_uXMS_Battery.moos
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_v1_uXMS_Battery.moos
+END
+meta_vehicle.moos
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/meta_vehicle.moos
+END
+plug_pLogger.moos
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_pLogger.moos
+END
+meta_vehicle.bhv
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/meta_vehicle.bhv
+END
+plug_uXMS_NAV.moos
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_uXMS_NAV.moos
+END
+plug_v2_uTimerScript.moos
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_v2_uTimerScript.moos
+END
+meta_shoreside.moos
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/meta_shoreside.moos
+END
+plug_v2_uFldMessageHandler.moos
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_v2_uFldMessageHandler.moos
+END
+plug_uFldNodeBroker.moos
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_uFldNodeBroker.moos
+END
+plug_uSimMarine.moos
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_uSimMarine.moos
+END
+plug_pHostInfo.moos
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_pHostInfo.moos
+END
+plug_v1_uXMS_GPS.moos
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/moos-ivp-aro/!svn/ver/5796/releases/moos-ivp-13.5/ivp/missions/m2_berta/plug_v1_uXMS_GPS.moos
+END

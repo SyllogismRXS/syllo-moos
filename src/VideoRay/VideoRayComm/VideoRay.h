@@ -26,7 +26,7 @@ public:
      int getPitchAccel();
      int getRollAccel();
      
-
+     int getHeading();
 
      int setDesiredHeading(int heading);
      

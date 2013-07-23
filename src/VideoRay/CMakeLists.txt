@@ -1,2 +1,3 @@
 add_subdirectory(VideoRayApp)
 add_subdirectory(VideoRayComm)
+add_subdirectory(VideoRaySim)
